@@ -1,4 +1,4 @@
-package com.example.springboot.service;
+package com.blog.springboot.service;
 
 import javax.inject.Inject;
 

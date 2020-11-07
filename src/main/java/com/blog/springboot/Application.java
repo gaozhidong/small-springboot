@@ -1,4 +1,4 @@
-package com.example.springboot;
+package com.blog.springboot;
 
 import java.util.Arrays;
 

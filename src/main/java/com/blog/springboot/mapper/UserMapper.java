@@ -1,6 +1,6 @@
-package com.example.springboot.mapper;
+package com.blog.springboot.mapper;
 
-import com.example.springboot.service.User;
+import com.blog.springboot.eneity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

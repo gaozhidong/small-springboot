@@ -1,9 +1,11 @@
-package com.example.springboot.service;
+package com.blog.springboot.service;
 
-import com.example.springboot.mapper.UserMapper;
+import com.blog.springboot.eneity.User;
+import com.blog.springboot.mapper.UserMapper;
+import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
-
+@Service
 public class UserService {
 
     private UserMapper userMapper;
