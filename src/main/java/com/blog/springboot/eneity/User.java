@@ -1,22 +1,25 @@
 package com.blog.springboot.eneity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.Instant;
 
 public class User {
     private Integer id;
     private String username;
+    @JsonIgnore // 序列化时忽略 encryptedPassword，从而不会返回给前台
     private String encryptedPassword;
     private String avatar;
     private Instant createdAt;
     private Instant updatedAt;
 
-    public User(Integer id, String username, String encryptedPassword) {
+    public User(Integer id, String username, String encryptedPassword, String avatar, Instant createdAt, Instant updatedAt) {
         this.id = id;
         this.username = username;
         this.encryptedPassword = encryptedPassword;
-        this.avatar = "";
-        this.createdAt = Instant.now();
-        this.updatedAt = Instant.now();
+        this.avatar = avatar;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public Integer getId() {
