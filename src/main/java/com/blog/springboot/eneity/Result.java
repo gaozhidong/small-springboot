@@ -1,36 +1,34 @@
 package com.blog.springboot.eneity;
 
-public class Result {
-    private String status;
-    private String msg;
-    private Boolean isLogin;
-    private Object data;
+public abstract class Result<T> {
+    public enum ResultStatus {
+        OK("ok"),
+        FAIL("fail");
 
-    public static Result failure(String message) {
-        return new Result("fail", message, false);
+        private String status;
+
+        ResultStatus(String status) {
+            this.status = status;
+        }
     }
 
-    public Result(String status, String msg, Boolean isLogin) {
-        this(status, msg, isLogin, null);
-    }
+    ResultStatus status;
+    String msg;
+    T data;
 
-    public Result(String status, String msg, Boolean isLogin, User data) {
+
+    protected Result(ResultStatus status, String msg, T data) {
         this.status = status;
         this.msg = msg;
-        this.isLogin = isLogin;
         this.data = data;
     }
 
     public String getStatus() {
-        return status;
+        return status.status;
     }
 
     public String getMsg() {
         return msg;
-    }
-
-    public Boolean isIsLogin() {
-        return isLogin;
     }
 
     public Object getData() {
